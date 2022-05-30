@@ -57,7 +57,13 @@ $ pip install django-bootstrap-v5
 ```
 ## Clonar el projecto con git
 
+En Windows: 
 
+C:\> git clone https://github.com/agusneme/Entrega1_NemePelleFassetta.git
+
+En Linux/Mac:
+
+$ git clone https://github.com/agusneme/Entrega1_NemePelleFassetta.git
 
 ## Correr el Servidor
 
@@ -76,6 +82,5 @@ python manage.py runserver
 Listo ya tenes nuestro funcionando trabajo!
 
 ahora Hace click en el siguiente link para ver el ejemplo corriendo: 
-
 
 [http://localhost:8000/](http://localhost:8000/)

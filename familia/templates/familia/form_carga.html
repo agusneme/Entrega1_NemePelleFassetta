@@ -1,0 +1,35 @@
+{% extends "familia/front.html" %}
+
+{% load bootstrap5 %}
+
+{% block cuerpo %}
+<div class="col container">
+   <div class="row">
+     <div class="col">
+      <h1>CARGAR UN ALUMNO</h1>
+     </div>
+     </div>
+     <div class="row">
+     <div class="col">
+       
+      {% if actualizar %}
+          <form action="{% url  'actualizar_action' %}" method="post">
+      {% else %}     
+          <form action="{% url  'agregar'%}" method="post">
+      {% endif %}
+
+      {% csrf_token %} 
+      {% bootstrap_form form %}
+    
+      {% if actualizar %}
+        {% bootstrap_button "Actualizar" button_type="submit" button_class="btn-primary" %} 
+      {% else %}
+        {% bootstrap_button "Guardar" button_type="submit" button_class="btn-primary" %}
+      {% endif %}
+      
+      </form>
+     </div>
+   </div>
+ </div>
+{% endblock %}
+

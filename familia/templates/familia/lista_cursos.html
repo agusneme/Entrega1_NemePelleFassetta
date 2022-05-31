@@ -1,0 +1,54 @@
+{% extends "familia/front.html" %}
+
+{% load bootstrap5 %}
+
+
+{% block cuerpo %}
+<div class="col-6">    
+
+  {% if resultados_busqueda %}
+    <h1>Resultados de la busqueda</h1>
+  {%endif%}
+  
+  <div class="row">
+    <div class="col-8">
+      {% url 'agregarCurso' as agregar_curso %}
+      {% bootstrap_button "Agregar" button_class="btn-success" button_type="link" href=agregar_curso %} 
+    <div>
+  <div>
+
+  <div class="row">
+    <div class="col">
+        {% if curso %}
+        <table class="table">
+            <thead>
+                <th scope="col">Identificador</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Camada</th>
+                <th scope="col">Acciones</th>
+            </thead>
+        
+            {% for c in curso %}
+            <tbody>
+                <tr>
+                    <th scope="row">{{c.id}} </th>
+                    <td> {{c.nombre}} </td>
+                    <td> {{c.camada}} </td>
+                    <td>
+                      {% url 'borrarCurso' identificador=c.id as borrar_url %}
+                      {% url 'actualizarCurso' identificador=c.id as actualizarCurso_url %} 
+                      {% bootstrap_button "Borrar" size="sm" button_class="btn-danger" button_type="link" href=borrar_url %}
+                      {% bootstrap_button "Actualizar" size="sm" button_class="btn-warning" button_type="link" href=actualizarCurso_url %}
+
+                    </td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+        {% else %}
+            <p>No tienes cursos cargados</p>
+        {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

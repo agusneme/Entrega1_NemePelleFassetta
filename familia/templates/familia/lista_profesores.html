@@ -1,0 +1,58 @@
+{% extends "familia/front.html" %}
+
+{% load bootstrap5 %}
+
+
+{% block cuerpo %}
+<div class="col-6">    
+
+  {% if resultados_busqueda %}
+    <h1>Resultados de la busqueda</h1>
+  {%endif%}
+  
+  <div class="row">
+    <div class="col-8">
+      {% url 'agregarProfe' as agregar_profe %}
+      {% bootstrap_button "Agregar" button_class="btn-success" button_type="link" href=agregar_profe %} 
+    <div>
+  <div>
+
+  <div class="row">
+    <div class="col">
+        {% if profesor %}
+        <table class="table">
+            <thead>
+                <th scope="col">Identificador</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Profesion</th>
+                <th scope="col">Email</th>
+                <th scope="col">Acciones</th>
+            </thead>
+        
+            {% for d in profesor %}
+            <tbody>
+                <tr>
+                    <th scope="row">{{d.id}} </th>
+                    <td> {{d.nombre}} </td>
+                    <td> {{d.apellido}} </td>
+                    <td> {{d.profesion}} </td>
+                    <td> {{d.email}} </td>
+                    <td>
+                      {% url 'borrarProfe' identificador=d.id as borrar_url %}
+                      {% url 'actualizarProfe' identificador=d.id as actualizarProfe_url %} 
+                      {% bootstrap_button "Borrar" size="sm" button_class="btn-danger" button_type="link" href=borrar_url %}
+                      {% bootstrap_button "Actualizar" size="sm" button_class="btn-warning" button_type="link" href=actualizarProfe_url %}
+
+                    </td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+        {% else %}
+            <p>No tienes profesores cargados</p>
+        {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

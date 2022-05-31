@@ -1,0 +1,54 @@
+
+
+
+{% load bootstrap5 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa</title>
+    <ul class="nav bg-dark justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="/">Cargador de alumnos, cursos y profesores.</a>
+          
+        </li>
+      </ul>
+</head>
+{% block cuerpo %}
+<body>
+  
+    <div class="container">
+        <ul class="nav justify-content-center ">
+        <div style="width:1000px; margin:250 auto;">
+        <div class="starter-template">
+        <center>
+
+        <h1>¡Bienvenido al Programa!</h1>
+        <br>------------------------------------------------------------------------------------------------</br>
+           <br></br>
+        <h3>Registro de Datos</h3>
+         <p class="lead">Esta es la pantalla inicial, para acceder<br>vas a tener que presionar el boton de abajo!</p>
+         <a class="btn btn-outline-success" href="{%url  'index' %}" role="button">Comenzar</a>
+        </center>
+        </div>
+        </div>
+      </div>
+</body>
+{% endblock %}
+<footer><ul class="nav bg-dark fixed-bottom justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link active" href="/">coder house - python 36585 - {% now 'd-m-Y' %}</a>
+    </li>
+  </ul></footer>
+</html>

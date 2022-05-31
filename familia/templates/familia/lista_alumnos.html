@@ -1,0 +1,64 @@
+{% extends "familia/front.html" %}
+
+{% load bootstrap5 %}
+
+
+{% block cuerpo %}
+<div class="col-10">    
+
+  {% if resultados_busqueda %}
+    <h1>Resultados de la busqueda</h1>
+  {%endif%}
+  
+  <div class="row">
+    <div class="col">
+      {% url 'agregar' as agregar_url %}
+      {% url 'buscar' as buscar_url %}
+      {% bootstrap_button "Agregar" button_class="btn-success" button_type="link" href=agregar_url %} 
+      {% bootstrap_button "Buscar" button_class="btn-success" button_type="link" href=buscar_url %}  
+    <div>
+  <div>
+
+  <div class="row">
+    <div class="col">
+        {% if personas %}
+        <table class="table">
+            <thead>
+                <th scope="col">Identificador</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Email</th>
+                <th scope="col">Fecha Nacimiento</th>
+                <th scope="col">Altura</th>
+                <th scope="col">Acciones</th>
+            </thead>
+        
+            {% for p in personas %}
+            <tbody>
+                <tr>
+                    <th scope="row">{{p.id}} </th>
+                    <td> {{p.nombre}} </td>
+                    <td> {{p.apellido}} </td>
+                    <td> {{p.edad}} </td>
+                    <td> {{p.email}} </td>
+                    <td> {{p.fecha_nacimiento}} </td>
+                    <td> {{p.altura}} m</td>
+                    <td>
+                      {% url 'borrar' identificador=p.id as borrar_url %}
+                      {% url 'actualizar' identificador=p.id as actualizar_url %} 
+                      {% bootstrap_button "Borrar" size="sm" button_class="btn-danger" button_type="link" href=borrar_url %}
+                      {% bootstrap_button "Actualizar" size="sm" button_class="btn-warning" button_type="link" href=actualizar_url %}
+
+                    </td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+        {% else %}
+            <p>No tienes alumnos cargados</p>
+        {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

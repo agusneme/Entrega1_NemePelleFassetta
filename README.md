@@ -70,6 +70,7 @@ $ git clone https://github.com/agusneme/Entrega1_NemePelleFassetta.git
 Los siguientes comandos son analogos en Mac/Linux/Windows:
 
 ```bash
+cd Entrega1_NemePelleFassetta
 python manage.py migrate
 ```
 La consola mostrara las migraciones de la base de datos que se realizaron.

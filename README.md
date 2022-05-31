@@ -4,8 +4,11 @@
 Esta es la primera entrega realizada para la plataforma CoderHouse en su curso de Python, este codigo contiene:
 
 -Vistas
+
 -Formularios
+
 -Templates
+
 -Modelos
 
 ** IMPORTANTE: Este archivo fue realizado en python 3.9.10 y Django 4.0.4**
@@ -31,6 +34,8 @@ La version de python DEBE coincidir con la solicitada mas arriba, si no es asi, 
 
 En una terminal cmd o powershell desde windows:
 
+Windows: 
+
 ```PS
 C:\> pip install django
 ```
@@ -42,7 +47,6 @@ $ pip install django
 ```
 
 Esto es lo necesario para correr el projecto.
-
 
 # Instalar django bootstrap v5
 
@@ -85,3 +89,9 @@ Listo ya tenes nuestro funcionando trabajo!
 ahora Hace click en el siguiente link para ver el ejemplo corriendo: 
 
 [http://localhost:8000/](http://localhost:8000/)
+
+## Como funciona nuestra WEB
+
+Una vez dentro de nuestra pagina web, deberas apretar en COMENZAR para luego seleccionar que quieres agregar ya sea un alumno, un curso o un profesor. 
+A cada uno de estos podras borrarlo y/o actualizar la informacion en caso de haber un error. En el caso de alumnos, podras buscar a cada alumno en la base de datos.
+

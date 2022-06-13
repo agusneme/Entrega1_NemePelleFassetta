@@ -10,45 +10,79 @@
 {# Display django.contrib.messages as Bootstrap alerts #}
 {% bootstrap_messages %}
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programa</title>
-    <ul class="nav bg-dark justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link active" href="/">Cargador de alumnos, cursos y profesores.</a>
-          
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid justify-content-between">
+      <!-- Left elements -->
+      <div class="d-flex">
+        <!-- Brand -->
+
+      </div>
+      <!-- Left elements -->
+  
+      <!-- Center elements -->
+      <table border="0" align="center"> 
+      <a class="navbar-brand me-2 mb-1 d-flex">
+        <img
+            src="https://i.postimg.cc/Z5FDD5vZ/pngwing-com.png"
+            height="80"
+            alt="MDB Logo"
+            loading="lazy"
+            style="margin-top: -10px;"
+          />
+      </a>
+      </table>
+      
+      <!-- Center elements -->
+  
+      <!-- Right elements -->
+      <ul class="navbar-nav flex-row">
+        <li class="nav-item me-3 me-lg-1">
         </li>
-      </ul>
+        <li class="nav-item me-3 me-lg-1">
+          <a class="nav-link" href="#">
+            <span><i class="fas fa-plus-circle fa-lg"></i></span>
+          </a>
+        </li>
+      <!-- Right elements -->
+    </div>
+  </nav>
 </head>
 {% block cuerpo %}
 <body>
   
     <div class="container">
         <ul class="nav justify-content-center ">
-        <div style="width:1000px; margin:250 auto;">
+        <div style="width:1000px; margin: 248px auto;">
         <div class="starter-template">
         <center>
 
-        <h1>¡Bienvenido al Programa!</h1>
+        <h1>¡Bienvenido a la plataforma de estudios!</h1>
         <br>------------------------------------------------------------------------------------------------</br>
            <br></br>
-        <h3>Registro de Datos</h3>
-         <p class="lead">Esta es la pantalla inicial, para acceder<br>vas a tener que presionar el boton de abajo!</p>
-         <a class="btn btn-outline-success" href="{%url  'index' %}" role="button">Comenzar</a>
+        <h3></h3>
+         <p class="lead">Si ya estas registrado presiona <strong>Login</strong></p>
+         <div style="width:1000px; margin:30 auto;">
+                    
+         <a class="btn btn-outline-primary btn-lg" href="{%url  'index' %}" role="button">Sign Up</a>
+                   
+         <a class="btn btn-outline-primary btn-lg" href="{%url  'index' %}" role="button">Login</a>
+                   
+          </div>
         </center>
         </div>
         </div>
       </div>
 </body>
 {% endblock %}
-<footer><ul class="nav bg-dark fixed-bottom justify-content-center">
-    <li class="nav-item">
-      <a class="nav-link active" href="/">coder house - python 36585 - {% now 'd-m-Y' %}</a>
-    </li>
-  </ul></footer>
+<footer><footer class="bg-dark text-center text-white">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(1, 216, 198, 0.603);">
+    © 2022 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/%22%3EMDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
 </html>

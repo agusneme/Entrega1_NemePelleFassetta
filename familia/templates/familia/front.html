@@ -11,45 +11,101 @@
 <!DOCTYPE>
 <html>
 <head>
-  <ul class="nav bg-dark justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link active" href="{%url  'index' %}">Cargador de alumnos, cursos y profesores.</a>
-          
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid justify-content-between">
+      <div class="d-flex">
+        <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
+          <img
+            src="https://i.postimg.cc/Z5FDD5vZ/pngwing-com.png"
+            height="80"
+            alt="MDB Logo"
+            loading="lazy"
+            style="margin-top: -10px;"
+          />
+        </a>
+        
+        <ul class ="nav navbar-nav">
+          <li class ="nav-item">
+            <a href="{%url  'index' %}" class="btn btn-lg btn-default">Alumnos</a>
+          </li>
+          <li class ="nav-item">
+            <a href="{%url  'index2' %}" class="btn btn-lg btn-default">Consignas</a>
+          </li>
+          <li class ="nav-item">
+            <a href="{%url  'index3' %}" class="btn btn-lg btn-default">Entregas</a>
+          </li>
+          <li class ="nav-item">
+            <a href="" class="btn btn-lg btn-default">About</a>
+          </li>
+          </ul>
+      </div>
+
+
+      
+      <ul class="navbar-nav flex-row">
+        <li class="nav-item me-3 me-lg-1">
+          <a class="nav-link d-sm-flex align-items-sm-center">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp"
+              class="rounded-circle"
+              height="40"
+              alt="Black and White Portrait of a Man"
+              loading="lazy"
+            />
+            <strong class="d-none d-sm-block ms-1">Juan</strong>
+          </a>
+        </li>
+        <li class="nav-item me-3 me-lg-1">
+          <a class="nav-link" href="#">
+            <span><i class="fas fa-plus-circle fa-lg"></i></span>
+          </a>
+        </li>
+        <li class="nav-item dropdown me-3 me-lg-1">
+          <a
+            class="nav-link  hidden-arrow"
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fas fa-comments fa-lg"></i>
+            <button type="button" class="btn btn-outline-secondary">Config <img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-gear-512.png" alt="" height="23"></button>
+          </a>
+        </li>
+        <li class="nav-item dropdown me-3 me-lg-1">
+          <a
+            class="nav-link  hidden-arrow"
+            href="/"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fas fa-bell fa-lg"></i>
+            <button type="button" class="btn btn-outline-secondary">Logout</button>
+
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdownMenuLink"
         </li>
       </ul>
+
+    </div>
+  </nav>
 </head>
 <body>
+
 <div class="row">
 <div class="col-2">
 
 <nav class ="navbar bg">
-<ul class ="nav navbar-nav">
-<li class ="nav-item">
-  <a href="{%url  'index' %}" class="btn btn-lg btn-default">Alumnos</a>
-</li>
-<li class ="nav-item">
-  <a href="{%url  'index2' %}" class="btn btn-lg btn-default">Cursos</a>
-</li>
-<li class ="nav-item">
-  <a href="{%url  'index3' %}" class="btn btn-lg btn-default">Profesores</a>
-</li>
-<li class ="nav-item">
-  <a href="/" class="btn btn-lg btn-default">Atras</a>
-</li>
-</ul>
+
 </nav>
 </div>
 {% block cuerpo %}
 {% endblock %}
-
-
 </div>
 </body>
-<footer>
-    <ul class="nav bg-dark fixed-bottom justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link active" href="{%url  'index' %}">coder house - python 36585 - {% now 'd-m-Y' %}</a>
-        </li>
-      </ul>
-  </footer>
 </html>
